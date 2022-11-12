@@ -1,0 +1,72 @@
+basePath: /
+host: localhost:3000
+info:
+  contact: {}
+  description: Este es un ejemplo sencillo utilizando Echo para crear una api.
+  title: API ECHO de prueba
+  version: "1.0"
+paths:
+  /:
+    get:
+      consumes:
+      - '*/*'
+      description: Endpoint básico que muestra mensaje de bienvenida en el servidor.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Muestra mensaje de bienvenida.
+      tags:
+      - root
+  /usopathparams/{value}:
+    get:
+      consumes:
+      - '*/*'
+      description: Endpoint que muestra el valor de la variable especificada por path.
+      parameters:
+      - description: Valor que se mostrará en la respuesta
+        in: path
+        name: value
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Muestra valor de variable especificada.
+      tags:
+      - UsoParametros
+  /usoqueryparams:
+    get:
+      consumes:
+      - '*/*'
+      description: Endpoint que muestra el valor de la variable 'value' especificada
+        por query.
+      parameters:
+      - description: Valor que se mostrará en la respuesta
+        in: query
+        name: value
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Muestra valor de la variable value especificada.
+      tags:
+      - UsoQuery
+schemes:
+- http
+swagger: "2.0"

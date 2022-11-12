@@ -1,0 +1,106 @@
+{
+    "schemes": [
+        "http"
+    ],
+    "swagger": "2.0",
+    "info": {
+        "description": "Este es un ejemplo sencillo utilizando Echo para crear una api.",
+        "title": "API ECHO de prueba",
+        "contact": {},
+        "version": "1.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "paths": {
+        "/": {
+            "get": {
+                "description": "Endpoint básico que muestra mensaje de bienvenida en el servidor.",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "root"
+                ],
+                "summary": "Muestra mensaje de bienvenida.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/usopathparams/{value}": {
+            "get": {
+                "description": "Endpoint que muestra el valor de la variable especificada por path.",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "UsoParametros"
+                ],
+                "summary": "Muestra valor de variable especificada.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Valor que se mostrará en la respuesta",
+                        "name": "value",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/usoqueryparams": {
+            "get": {
+                "description": "Endpoint que muestra el valor de la variable 'value' especificada por query.",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "UsoQuery"
+                ],
+                "summary": "Muestra valor de la variable value especificada.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Valor que se mostrará en la respuesta",
+                        "name": "value",
+                        "in": "query",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
