@@ -1,9 +1,9 @@
 package main
 
 import (
-	"net/http"
-
+	"TestGO/EchoApp/routers"
 	_ "TestGO/docs/EchoApp"
+	"net/http"
 
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -13,7 +13,7 @@ import (
 // @title API ECHO de prueba
 // @version 1.0
 // @description Este es un ejemplo sencillo utilizando Echo para crear una api.
-// @host localhost:3000
+// @host localhost:3333
 // @BasePath /
 // @schemes http
 
@@ -35,9 +35,11 @@ func main() {
 	e.GET("/docs/*", echoSwagger.WrapHandler)
 	e.GET("/usopathparams/:value", UsoParametros)
 	e.GET("/usoqueryparams", UsoQuery)
+	// Esta estructura debería reemplazar lo anterior
+	routers.InitTestRoutes(e)
 
 	// Start server
-	e.Logger.Fatal(e.Start(":3000"))
+	e.Logger.Fatal(e.Start(":3333"))
 }
 
 // Welcome godoc

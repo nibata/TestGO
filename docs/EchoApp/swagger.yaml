@@ -1,5 +1,5 @@
 basePath: /
-host: localhost:3000
+host: localhost:3333
 info:
   contact: {}
   description: Este es un ejemplo sencillo utilizando Echo para crear una api.
@@ -22,6 +22,28 @@ paths:
       summary: Muestra mensaje de bienvenida.
       tags:
       - root
+  /helloworld:
+    get:
+      consumes:
+      - '*/*'
+      description: Endpoint que muestra el helloworld de la variable ingresada.
+      parameters:
+      - description: Valor que se mostrará en la respuesta
+        in: path
+        name: nombre
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: hello world sencillo.
+      tags:
+      - helloworld
   /usopathparams/{value}:
     get:
       consumes:

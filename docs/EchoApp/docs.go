@@ -40,6 +40,39 @@ const docTemplate = `{
                 }
             }
         },
+        "/helloworld": {
+            "get": {
+                "description": "Endpoint que muestra el helloworld de la variable ingresada.",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "helloworld"
+                ],
+                "summary": "hello world sencillo.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Valor que se mostrará en la respuesta",
+                        "name": "nombre",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
         "/usopathparams/{value}": {
             "get": {
                 "description": "Endpoint que muestra el valor de la variable especificada por path.",
@@ -112,7 +145,7 @@ const docTemplate = `{
 // SwaggerInfo holds exported Swagger Info so clients can modify it
 var SwaggerInfo = &swag.Spec{
 	Version:          "1.0",
-	Host:             "localhost:3000",
+	Host:             "localhost:3333",
 	BasePath:         "/",
 	Schemes:          []string{"http"},
 	Title:            "API ECHO de prueba",

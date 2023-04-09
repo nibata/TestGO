@@ -9,7 +9,7 @@
         "contact": {},
         "version": "1.0"
     },
-    "host": "localhost:3000",
+    "host": "localhost:3333",
     "basePath": "/",
     "paths": {
         "/": {
@@ -25,6 +25,39 @@
                     "root"
                 ],
                 "summary": "Muestra mensaje de bienvenida.",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "additionalProperties": true
+                        }
+                    }
+                }
+            }
+        },
+        "/helloworld": {
+            "get": {
+                "description": "Endpoint que muestra el helloworld de la variable ingresada.",
+                "consumes": [
+                    "*/*"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "helloworld"
+                ],
+                "summary": "hello world sencillo.",
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Valor que se mostrará en la respuesta",
+                        "name": "nombre",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "OK",
