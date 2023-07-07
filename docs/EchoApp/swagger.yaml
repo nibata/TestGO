@@ -22,14 +22,14 @@ paths:
       summary: Muestra mensaje de bienvenida.
       tags:
       - root
-  /helloworld:
+  /hello_world:
     get:
       consumes:
       - '*/*'
-      description: Endpoint que muestra el helloworld de la variable ingresada.
+      description: Endpoint que muestra el HelloWorld de la variable ingresada.
       parameters:
       - description: Valor que se mostrará en la respuesta
-        in: path
+        in: query
         name: nombre
         required: true
         type: string
@@ -43,7 +43,7 @@ paths:
             type: object
       summary: hello world sencillo.
       tags:
-      - helloworld
+      - HelloWorld
   /usopathparams/{value}:
     get:
       consumes:

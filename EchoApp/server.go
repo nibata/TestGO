@@ -56,7 +56,7 @@ func Welcome(c echo.Context) error {
 	})
 }
 
-// UsoPath godoc
+// UsoParametros godoc
 // @Summary Muestra valor de variable especificada.
 // @Description Endpoint que muestra el valor de la variable especificada por path.
 // @Param value path string true "Valor que se mostrará en la respuesta"

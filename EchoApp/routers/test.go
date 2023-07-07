@@ -12,22 +12,22 @@ type Message struct {
 }
 
 func InitTestRoutes(e *echo.Echo) {
-	e.GET("/helloworld", helloworld)
+	e.GET("/hello_world", HelloWorld)
 }
 
-// helloworld godoc
+// HelloWorld godoc
 // @Summary hello world sencillo.
-// @Description Endpoint que muestra el helloworld de la variable ingresada.
-// @Param nombre path string true "Valor que se mostrará en la respuesta"
-// @Tags helloworld
+// @Description Endpoint que muestra el HelloWorld de la variable ingresada.
+// @Param nombre query string true "Valor que se mostrará en la respuesta"
+// @Tags HelloWorld
 // @Accept */*
 // @Produce json
 // @Success 200 {object} map[string]interface{}
-// @Router /helloworld [get]
-func helloworld(c echo.Context) error {
+// @Router /hello_world [get]
+func HelloWorld(c echo.Context) error {
 	query := c.QueryParam("nombre")
 
-	if val, err := controllers.HelloWorld(query); err != nil {
+	if val, err := controllers.ControllerHelloWorld(query); err != nil {
 		return c.JSON(http.StatusBadRequest, Message{
 			Msg: err.Error(),
 		})

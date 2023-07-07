@@ -40,9 +40,9 @@ const docTemplate = `{
                 }
             }
         },
-        "/helloworld": {
+        "/hello_world": {
             "get": {
-                "description": "Endpoint que muestra el helloworld de la variable ingresada.",
+                "description": "Endpoint que muestra el HelloWorld de la variable ingresada.",
                 "consumes": [
                     "*/*"
                 ],
@@ -50,7 +50,7 @@ const docTemplate = `{
                     "application/json"
                 ],
                 "tags": [
-                    "helloworld"
+                    "HelloWorld"
                 ],
                 "summary": "hello world sencillo.",
                 "parameters": [
@@ -58,7 +58,7 @@ const docTemplate = `{
                         "type": "string",
                         "description": "Valor que se mostrará en la respuesta",
                         "name": "nombre",
-                        "in": "path",
+                        "in": "query",
                         "required": true
                     }
                 ],

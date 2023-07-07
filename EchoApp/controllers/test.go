@@ -5,7 +5,7 @@ import (
 	"fmt"
 )
 
-func HelloWorld(nombre string) (string, error) {
+func ControllerHelloWorld(nombre string) (string, error) {
 	if nombre == "" || nombre == "ERROR" {
 		return nombre, errors.New("error en el nombre")
 	}
